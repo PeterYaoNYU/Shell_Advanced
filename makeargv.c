@@ -2,6 +2,7 @@
 #include <string.h>
 #include <stdlib.h>
 #include <stdio.h>
+#include "makeargv.h"
 
 int makeargv(char * s, const char * delimiters, char *** argvp){
     // int length = strlen(s);
@@ -15,7 +16,7 @@ int makeargv(char * s, const char * delimiters, char *** argvp){
     strtok(t, delimiters);
     for (arg_count = 1; strtok(NULL, delimiters) != NULL; arg_count++);
 
-    printf("finish counting, the number of arguments is %d\n", arg_count);
+    // printf("finish counting, the number of arguments is %d\n", arg_count);
 
     // for (int i = 0; i <= arg_count; i++){
     //     *argvp = (char**)malloc(sizeof(char **));
@@ -37,11 +38,12 @@ int makeargv(char * s, const char * delimiters, char *** argvp){
 
 int main(){
     char * s = "nyu-shanghai-fuck-covid";
-    char *** argvp = (char***)malloc(sizeof(char **));
+    // char *** argvp = (char***)malloc(sizeof(char **));
+    char ** argvp;
     char * deli = "-";
-    int arg_count = makeargv(s, deli, argvp);
+    int arg_count = makeargv(s, deli, &argvp);
     for (int i = 0; i < arg_count; i++){
-        printf("%s\n", *(*argvp+i));
+        printf("%s\n", *(argvp+i));
     }
     
 }

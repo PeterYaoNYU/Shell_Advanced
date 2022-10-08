@@ -28,14 +28,7 @@ int main(int argc, char * argv[]) {
         }
         pid_t child_pid = fork();
         if (child_pid == 0){
-            // printf("in child");
-            char ** argvp;
-            int count = makeargv(inbuf, " ", &argvp);
-            for (int i = 0; i < count ; i++){
-                printf("%s\n", argvp[i]);
-            }
-            printf("executing...\n");
-            execvp(argvp[0], argvp);
+            execute_cmd(inbuf);
         } else {
             wait(NULL);
         }

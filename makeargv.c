@@ -36,14 +36,14 @@ int makeargv(char * s, const char * delimiters, char *** argvp){
     return arg_count;
 }
 
-int main(){
-    char * s = "nyu-shanghai-fuck-covid";
-    // char *** argvp = (char***)malloc(sizeof(char **));
-    char ** argvp;
-    char * deli = "-";
-    int arg_count = makeargv(s, deli, &argvp);
-    for (int i = 0; i < arg_count; i++){
-        printf("%s\n", *(argvp+i));
-    }
+// int main(){
+//     char * s = "nyu-shanghai-fuck-covid";
+//     // char *** argvp = (char***)malloc(sizeof(char **));
+//     char ** argvp;
+//     char * deli = "-";
+//     int arg_count = makeargv(s, deli, &argvp);
+//     for (int i = 0; i < arg_count; i++){
+//         printf("%s\n", *(argvp+i));
+//     }
     
-}
+// }

@@ -1,7 +1,7 @@
 all: shell
 
 shell: shell.c utility.h makeargv.c parseandredirect.c execute_cmd.c
-	gcc -o shell -g -Wall shell.c execute_cmd.c makeargv.c parseandredirect.c 
+	gcc -o shell -g -Wall shell.c execute_cmd.c makeargv.c parseandredirect.c siginit.c
 	# ./shell
 
 # execute_cmd: makeargv parseandredirect execute_cmd.c utility.h
